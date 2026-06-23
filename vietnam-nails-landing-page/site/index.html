@@ -81,6 +81,7 @@
   .services .note{margin:0;font-size:14px;color:rgba(74,31,51,.6);}
   .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,.14);}
   .price-row:last-child{border-bottom:1px solid rgba(94,18,51,.14);}
+  .price-cat{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#a8467a;padding:10px 0 4px;border-bottom:2px solid rgba(94,18,51,.18);margin-bottom:0;}
   .price-row .name{font-size:19px;font-weight:700;color:#5e1233;}
   .price-row .desc{font-size:14px;color:rgba(74,31,51,.6);margin-top:3px;}
   .price-row .price{font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;}
@@ -254,15 +255,25 @@
 <section id="services" class="services">
   <div class="head">
     <h2 data-i="servicesTitle">Services &amp; pricing</h2>
-    <p class="note" data-i="servicesNote">Prices from · final quote at consultation</p>
+    <p class="note" data-i="servicesNote">Sin cita previa · Sense cita prèvia</p>
   </div>
+
+  <div class="price-cat" data-i="catHands">Hands · Manos / Mans</div>
   <div>
-    <div class="price-row"><div><div class="name" data-i="s1n">Classic manicure</div><div class="desc" data-i="s1d">Shape, cuticle care &amp; polish</div></div><div class="price">€18</div></div>
-    <div class="price-row"><div><div class="name" data-i="s2n">Gel manicure</div><div class="desc" data-i="s2d">Long-wear gel, glossy for weeks</div></div><div class="price">€25</div></div>
-    <div class="price-row"><div><div class="name" data-i="s3n">Acrylic &amp; sculpted extensions</div><div class="desc" data-i="s3d">Custom length &amp; shape</div></div><div class="price">€40</div></div>
-    <div class="price-row"><div><div class="name" data-i="s4n">Nail art</div><div class="desc" data-i="s4d">Hand-painted detail · per nail</div></div><div class="price">€3</div></div>
-    <div class="price-row"><div><div class="name" data-i="s5n">Spa pedicure</div><div class="desc" data-i="s5d">Soak, scrub, shape &amp; polish</div></div><div class="price">€30</div></div>
-    <div class="price-row"><div><div class="name" data-i="s6n">Soak-off &amp; removal</div><div class="desc" data-i="s6d">Gentle removal &amp; nail reset</div></div><div class="price">€10</div></div>
+    <div class="price-row"><div><div class="name" data-i="s1n">Regular nail polish</div><div class="desc" data-i="s1d">Pintar uñas normal / Pintar ungles normal</div></div><div class="price">€5</div></div>
+    <div class="price-row"><div><div class="name" data-i="s2n">Manicure (incl. polish)</div><div class="desc" data-i="s2d">Manicura incluido pintar / Manicura inclós pintar</div></div><div class="price">€10</div></div>
+    <div class="price-row"><div><div class="name" data-i="s3n">Semi-permanent polish</div><div class="desc" data-i="s3d">Pintar semipermanente / Pintar semipermanent</div></div><div class="price">€10</div></div>
+    <div class="price-row"><div><div class="name" data-i="s4n">New gel nails</div><div class="desc" data-i="s4d">Gel or porcelain · Uñas de gel nuevas / Gel o porcelana</div></div><div class="price">€25</div></div>
+    <div class="price-row"><div><div class="name" data-i="s5n">Gel fill / Infill</div><div class="desc" data-i="s5d">Relleno / Omplir</div></div><div class="price">€20</div></div>
+  </div>
+
+  <div class="price-cat" style="margin-top:28px;" data-i="catFeet">Feet · Pies / Peus</div>
+  <div>
+    <div class="price-row"><div><div class="name" data-i="s6n">Regular nail polish (feet)</div><div class="desc" data-i="s6d">Esmalte normal / Esmalt normal</div></div><div class="price">€10</div></div>
+    <div class="price-row"><div><div class="name" data-i="s7n">Gel toenails</div><div class="desc" data-i="s7d">Uñas de gel pies / Ungles de gel peus</div></div><div class="price">€30</div></div>
+    <div class="price-row"><div><div class="name" data-i="s8n">Half pedicure</div><div class="desc" data-i="s8d">Trim + file + cuticles + polish · ½ pedicura</div></div><div class="price">€15</div></div>
+    <div class="price-row"><div><div class="name" data-i="s9n">Full pedicure with soak</div><div class="desc" data-i="s9d">Calluses + cuticles + polish · Pedicura completa con agua</div></div><div class="price">€25</div></div>
+    <div class="price-row"><div><div class="name" data-i="s10n">Hand-painted nail art</div><div class="desc" data-i="s10d">Dibujo de manual · price on request</div></div><div class="price" data-i="s10p">Ask us</div></div>
   </div>
 </section>
 
@@ -373,13 +384,18 @@ const T = {
     storyP1:"Nail appointments should feel good — from the moment you walk in. Not rushed, not transactional. Actually good.",
     storyP2:"A space where you feel comfortable, with a team that listens and works in a way that makes you genuinely excited to look at your hands.",
     storyP3:"That's what we set out to create. Everything about this place was built around that feeling.",
-    servicesTitle:"Services & pricing", servicesNote:"Prices from · final quote at consultation",
-    s1n:"Classic manicure", s1d:"Shape, cuticle care & polish",
-    s2n:"Gel manicure", s2d:"Long-wear gel, glossy for weeks",
-    s3n:"Acrylic & sculpted extensions", s3d:"Custom length & shape",
-    s4n:"Nail art", s4d:"Hand-painted detail · per nail",
-    s5n:"Spa pedicure", s5d:"Soak, scrub, shape & polish",
-    s6n:"Soak-off & removal", s6d:"Gentle removal & nail reset",
+    servicesTitle:"Services & pricing", servicesNote:"Walk-ins welcome · no appointment needed",
+    catHands:"Hands", catFeet:"Feet",
+    s1n:"Regular nail polish", s1d:"Pintar uñas normal",
+    s2n:"Manicure (incl. polish)", s2d:"Manicura incluido pintar",
+    s3n:"Semi-permanent polish", s3d:"Pintar semipermanente",
+    s4n:"New gel nails", s4d:"Gel or porcelain",
+    s5n:"Gel fill / Infill", s5d:"Relleno",
+    s6n:"Regular nail polish (feet)", s6d:"Esmalte normal",
+    s7n:"Gel toenails", s7d:"Uñas de gel pies",
+    s8n:"Half pedicure", s8d:"Trim + file + cuticles + polish",
+    s9n:"Full pedicure with soak", s9d:"Calluses + cuticles + polish",
+    s10n:"Hand-painted nail art", s10d:"Price on request", s10p:"Ask us",
     reviewsTitle:"Loved in Sabadell",
     r1:"“Best nails I've had in years. So precise and they last forever. The room is calm and spotless.”",
     r2:"“I bring a photo and they get it exactly right every time. Genuinely the nail art is unreal.”",
@@ -404,13 +420,18 @@ const T = {
     storyP1:"Una cita de uñas debería sentirse bien desde que entras por la puerta. Sin prisas, sin que parezca un trámite. Bien de verdad.",
     storyP2:"Un espacio donde te sientes cómoda, con un equipo que escucha y trabaja para que te encante mirarte las manos.",
     storyP3:"Eso es lo que quisimos crear. Todo en este lugar está pensado alrededor de esa sensación.",
-    servicesTitle:"Servicios y precios", servicesNote:"Precios desde · presupuesto final en consulta",
-    s1n:"Manicura clásica", s1d:"Forma, cutículas y esmalte",
-    s2n:"Manicura de gel", s2d:"Gel de larga duración, brillo de semanas",
-    s3n:"Extensiones de acrílico y esculpido", s3d:"Largo y forma a medida",
-    s4n:"Nail art", s4d:"Detalle pintado a mano · por uña",
-    s5n:"Pedicura spa", s5d:"Remojo, exfoliación, forma y esmalte",
-    s6n:"Retirada de esmalte", s6d:"Retirada suave y reinicio de la uña",
+    servicesTitle:"Servicios y precios", servicesNote:"Sin cita previa",
+    catHands:"Manos", catFeet:"Pies",
+    s1n:"Pintar uñas normal", s1d:"Esmalte clásico",
+    s2n:"Manicura (incluido pintar)", s2d:"Forma, cutículas y esmalte",
+    s3n:"Pintar semipermanente", s3d:"Semipermanente de larga duración",
+    s4n:"Uñas de gel nuevas", s4d:"Gel o porcelana",
+    s5n:"Relleno", s5d:"Relleno de gel",
+    s6n:"Esmalte normal (pies)", s6d:"Esmalte clásico en pies",
+    s7n:"Uñas de gel pies", s7d:"Extensiones de gel en pies",
+    s8n:"½ Pedicura", s8d:"Cortar + limar + quitar cutículas + pintar normal",
+    s9n:"Pedicura completa con agua", s9d:"Quitar durezas, cutículas + pintar normal",
+    s10n:"Dibujo de manual", s10d:"Nail art pintado a mano · precio a consultar", s10p:"Consultar",
     reviewsTitle:"Nos quieren en Sabadell",
     r1:"“Las mejores uñas en años. Súper precisas y duran muchísimo. El local es tranquilo e impecable.”",
     r2:"“Llevo una foto y la clavan siempre. De verdad, el nail art es una pasada.”",
@@ -435,13 +456,18 @@ const T = {
     storyP1:"Una cita d'ungles s'hauria de sentir bé des que entres per la porta. Sense presses, sense que sembli un tràmit. Bé de debò.",
     storyP2:"Un espai on et sents còmoda, amb un equip que escolta i treballa perquè t'encanti mirar-te les mans.",
     storyP3:"Això és el que volíem crear. Tot en aquest lloc està pensat al voltant d'aquesta sensació.",
-    servicesTitle:"Serveis i preus", servicesNote:"Preus des de · pressupost final a la consulta",
-    s1n:"Manicura clàssica", s1d:"Forma, cutícules i esmalt",
-    s2n:"Manicura de gel", s2d:"Gel de llarga durada, brillantor de setmanes",
-    s3n:"Extensions d'acrílic i esculpit", s3d:"Llargada i forma a mida",
-    s4n:"Nail art", s4d:"Detall pintat a mà · per ungla",
-    s5n:"Pedicura spa", s5d:"Remull, exfoliació, forma i esmalt",
-    s6n:"Retirada d'esmalt", s6d:"Retirada suau i reinici de l'ungla",
+    servicesTitle:"Serveis i preus", servicesNote:"Sense cita prèvia",
+    catHands:"Mans", catFeet:"Peus",
+    s1n:"Pintar ungles normal", s1d:"Esmalt clàssic",
+    s2n:"Manicura (inclòs pintar)", s2d:"Forma, cutícules i esmalt",
+    s3n:"Pintar semipermanent", s3d:"Semipermanent de llarga durada",
+    s4n:"Ungles de gel noves", s4d:"Gel o porcellana",
+    s5n:"Omplir", s5d:"Reompliment de gel",
+    s6n:"Esmalt normal (peus)", s6d:"Esmalt clàssic als peus",
+    s7n:"Ungles de gel peus", s7d:"Extensions de gel als peus",
+    s8n:"½ Pedicura", s8d:"Tallar + llimar + treure cutícules + pintar normal",
+    s9n:"Pedicura completa amb aigua", s9d:"Treure duresa, cutícules + pintar normal",
+    s10n:"Dibuix de manual", s10d:"Nail art pintat a mà · preu a consultar", s10p:"Consultar",
     reviewsTitle:"Estimades a Sabadell",
     r1:"“Les millors ungles en anys. Súper precises i duren moltíssim. El local és tranquil i impecable.”",
     r2:"“Hi porto una foto i la claven sempre. De debò, el nail art és una passada.”",
