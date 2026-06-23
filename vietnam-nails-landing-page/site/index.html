@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vietnam Nails · Nail Studio in Sabadell, Barcelona</title>
+<meta name="description" content="Vietnam Nails — a calm nail studio in Sabadell. Classic & gel manicures, hand-painted nail art, acrylic extensions and spa pedicures. Walk-ins welcome.">
+<meta property="og:title" content="Vietnam Nails · Sabadell">
+<meta property="og:description" content="Clean, careful nail work in a calm room. Sabadell, Barcelona.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/style-art.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#efe9e2;font-family:'Archivo',sans-serif;color:#4a1f33;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{display:block;}
+  a{color:inherit;}
+  @keyframes vnRise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  .reveal{opacity:0;}
+  .reveal.in{animation:vnRise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+
+  .wrap{max-width:1440px;margin:0 auto;}
+  .slot{width:100%;border-radius:14px;overflow:hidden;background:#e7e0d7;}
+  .slot img{width:100%;height:100%;object-fit:cover;}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,5vw,64px);background:rgba(239,233,226,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(94,18,51,.08);}
+  .brand{font-weight:800;font-size:22px;letter-spacing:-.02em;color:#5e1233;text-decoration:none;white-space:nowrap;}
+  nav.main{display:flex;align-items:center;gap:clamp(14px,2.4vw,34px);}
+  nav.main a.navlink{font-size:14px;font-weight:600;color:#5e1233;text-decoration:none;opacity:.85;}
+  nav.main a.navlink:hover{opacity:1;}
+  .langgroup{display:flex;align-items:center;gap:2px;background:rgba(94,18,51,.07);border-radius:999px;padding:3px;}
+  .langgroup button{appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:transparent;opacity:.5;transition:.2s;}
+  .langgroup button.active{background:#f2afce;opacity:1;}
+  .btn-pill{display:inline-flex;align-items:center;gap:10px;background:#f2afce;color:#5e1233;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border-radius:999px;text-decoration:none;white-space:nowrap;}
+  .navtoggle{display:none;appearance:none;border:none;background:rgba(94,18,51,.07);border-radius:12px;width:42px;height:42px;cursor:pointer;color:#5e1233;}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(40px,6vw,90px) clamp(20px,5vw,64px) clamp(28px,4vw,56px);}
+  .eyebrow{margin:0 0 22px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#a8467a;}
+  .hero h1{margin:0;font-size:clamp(46px,6.4vw,92px);line-height:.98;font-weight:800;letter-spacing:-.03em;color:#5e1233;text-wrap:balance;}
+  .hero h1 .accent{color:#d96aa0;}
+  .hero p.lead{margin:30px 0 36px;max-width:430px;font-size:17px;line-height:1.55;color:rgba(74,31,51,.78);}
+  .cta-lg{display:inline-flex;align-items:center;gap:10px;background:#f2afce;color:#5e1233;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:16px 30px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(242,175,206,.5);}
+  .cta-ghost{display:inline-flex;align-items:center;gap:8px;color:#5e1233;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:16px 8px;text-decoration:none;}
+  .hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;}
+  .hero .slot{border-radius:18px;height:clamp(360px,46vw,580px);}
+
+  /* gallery */
+  .gallery{padding:0 clamp(20px,5vw,64px) clamp(40px,6vw,80px);}
+  .gallery .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .gallery .slot{height:clamp(220px,26vw,360px);}
+
+  /* styles */
+  .styles{padding:clamp(48px,6vw,90px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;}
+  .styles h2{text-align:center;margin:0 0 clamp(36px,4vw,56px);font-size:clamp(34px,4.6vw,58px);font-weight:800;letter-spacing:-.025em;color:#5e1233;}
+  .styles .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);}
+  .card{background:#e7e0d7;border-radius:18px;padding:16px;display:flex;flex-direction:column;}
+  .card.hl{background:#8c1f4d;box-shadow:0 20px 40px rgba(140,31,77,.28);}
+  .card .slot{height:clamp(220px,24vw,300px);border-radius:12px;}
+  .card h3{margin:20px 4px 8px;font-size:22px;font-weight:800;letter-spacing:-.01em;color:#5e1233;}
+  .card.hl h3{color:#fff;}
+  .card p{margin:0 4px 22px;font-size:14px;line-height:1.5;color:rgba(74,31,51,.7);flex:1;}
+  .card.hl p{color:rgba(255,255,255,.82);}
+  .card a.book{display:block;text-align:center;background:#f2afce;color:#5e1233;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:13px;border-radius:999px;text-decoration:none;}
+
+  /* story */
+  .story{background:#e7e0d7;}
+  .story .inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);max-width:1320px;margin:0 auto;}
+  .story .slot{height:clamp(320px,38vw,500px);border-radius:16px;}
+  .story h2{margin:0 0 28px;font-size:clamp(32px,4.2vw,54px);line-height:1.02;font-weight:800;letter-spacing:-.025em;color:#5e1233;}
+  .story p{margin:0 0 18px;font-size:16px;line-height:1.6;color:rgba(74,31,51,.8);max-width:460px;}
+
+  /* services */
+  .services{padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);max-width:1040px;margin:0 auto;}
+  .services .head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:clamp(28px,3vw,44px);}
+  .services h2{margin:0;font-size:clamp(32px,4.2vw,54px);font-weight:800;letter-spacing:-.025em;color:#5e1233;}
+  .services .note{margin:0;font-size:14px;color:rgba(74,31,51,.6);}
+  .price-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,.14);}
+  .price-row:last-child{border-bottom:1px solid rgba(94,18,51,.14);}
+  .price-row .name{font-size:19px;font-weight:700;color:#5e1233;}
+  .price-row .desc{font-size:14px;color:rgba(74,31,51,.6);margin-top:3px;}
+  .price-row .price{font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;}
+
+  /* reviews */
+  .reviews{background:#5e1233;color:#fff;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);}
+  .reviews .inner{max-width:1240px;margin:0 auto;}
+  .reviews h2{margin:0 0 clamp(32px,4vw,52px);font-size:clamp(30px,3.8vw,48px);font-weight:800;letter-spacing:-.025em;color:#fff;text-align:center;}
+  .reviews .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);}
+  .review{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;}
+  .review .stars{color:#f2afce;font-size:15px;letter-spacing:2px;margin-bottom:14px;}
+  .review p{margin:0 0 20px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.92);}
+  .review .who{font-size:13px;font-weight:700;letter-spacing:.04em;color:#f2afce;}
+
+  /* cta */
+  .cta{display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch;background:linear-gradient(135deg,#f2afce 0%,#ec8fbb 100%);}
+  .cta .copy{padding:clamp(48px,6vw,110px) clamp(24px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
+  .cta h2{margin:0 0 28px;font-size:clamp(34px,4.6vw,62px);line-height:1;font-weight:800;letter-spacing:-.03em;color:#5e1233;text-wrap:balance;}
+  .cta p{margin:0 0 34px;max-width:440px;font-size:17px;line-height:1.55;color:rgba(94,18,51,.78);}
+  .cta a.dark{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#5e1233;color:#fff;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:16px 32px;border-radius:999px;text-decoration:none;}
+  .cta .slot{height:100%;min-height:340px;border-radius:0;}
+
+  /* visit */
+  .visit{padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;}
+  .visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;}
+  .visit h2{margin:0 0 28px;font-size:clamp(30px,3.8vw,48px);font-weight:800;letter-spacing:-.025em;color:#5e1233;}
+  .visit .block{margin-bottom:24px;}
+  .visit .label{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a8467a;margin-bottom:8px;}
+  .visit .addr{font-size:17px;line-height:1.5;color:#4a1f33;}
+  .visit .hours{display:grid;grid-template-columns:auto auto;gap:4px 28px;font-size:16px;color:#4a1f33;width:max-content;}
+  .visit .hours b{font-weight:700;}
+  .visit .hours .muted{opacity:.6;}
+  .visit a.ig-handle{font-size:17px;color:#5e1233;font-weight:700;text-decoration:none;border-bottom:2px solid #f2afce;}
+  .visit a.tel{display:inline-flex;align-items:center;gap:8px;font-size:17px;color:#5e1233;font-weight:700;text-decoration:none;}
+  .visit .mapwrap{border-radius:16px;overflow:hidden;height:clamp(300px,32vw,440px);box-shadow:0 16px 40px rgba(94,18,51,.14);}
+  .visit .mapwrap iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.15);}
+  .walkin{display:inline-block;margin-top:6px;background:rgba(242,175,206,.4);color:#5e1233;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;}
+
+  /* instagram feed */
+  .igsec{padding:clamp(40px,5vw,72px) 0 clamp(20px,3vw,40px);}
+  .igsec .top{text-align:center;padding:0 20px clamp(24px,3vw,40px);}
+  .igsec .top a{display:inline-flex;align-items:center;gap:12px;font-size:clamp(22px,2.6vw,32px);font-weight:800;letter-spacing:-.02em;color:#5e1233;text-decoration:none;}
+  .igsec .igicon{width:clamp(26px,2.6vw,34px);height:auto;}
+  .igsec .feed{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+  .igtile{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:#e7e0d7;}
+  .igtile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .igtile .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(94,18,51,0);transition:background .35s ease;}
+  .igtile .ov svg{width:34px;height:34px;opacity:0;transform:scale(.7);transition:.35s ease;color:#fff;}
+  .igtile:hover img{transform:scale(1.07);}
+  .igtile:hover .ov{background:rgba(94,18,51,.4);}
+  .igtile:hover .ov svg{opacity:1;transform:scale(1);}
+
+  /* footer */
+  footer{background:#5e1233;color:rgba(255,255,255,.78);padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px);}
+  footer .inner{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;}
+  footer .fbrand{font-size:22px;font-weight:800;letter-spacing:-.02em;color:#fff;}
+  footer .links{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;}
+  footer .links a{color:rgba(255,255,255,.78);text-decoration:none;}
+  footer .links a.ig{color:#f2afce;font-weight:700;}
+  footer .copy{font-size:13px;color:rgba(255,255,255,.5);width:100%;text-align:center;padding-top:8px;}
+
+  /* responsive */
+  @media(max-width:920px){
+    nav.main .navlink{display:none;}
+    nav.main.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:6px;padding:14px clamp(20px,5vw,64px) 22px;background:#efe9e2;border-bottom:1px solid rgba(94,18,51,.1);}
+    nav.main.open .navlink{display:block;font-size:18px;padding:8px 0;}
+    .navtoggle{display:flex;align-items:center;justify-content:center;}
+    .langgroup,nav.main .btn-pill{order:0;}
+    .hero{grid-template-columns:1fr;}
+    .gallery .grid{grid-template-columns:1fr 1fr;}
+    .styles .grid{grid-template-columns:1fr;max-width:440px;margin:0 auto;}
+    .story .inner{grid-template-columns:1fr;}
+    .reviews .grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}
+    .cta{grid-template-columns:1fr;}
+    .cta .slot{min-height:300px;order:-1;}
+    .visit .grid{grid-template-columns:1fr;}
+    .igsec .feed{grid-template-columns:repeat(3,1fr);}
+  }
+  @media(max-width:560px){
+    .gallery .grid{grid-template-columns:1fr;}
+    .igsec .feed{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <a href="#top" class="brand">Vietnam&nbsp;Nails</a>
+  <nav class="main" id="nav">
+    <a href="#story" class="navlink" data-i="navAbout">About</a>
+    <a href="#services" class="navlink" data-i="navServices">Services</a>
+    <a href="#styles" class="navlink" data-i="navStyles">Styles</a>
+    <a href="#visit" class="navlink" data-i="navVisit">Visit</a>
+    <div class="langgroup" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <button type="button" data-lang="es">ES</button>
+      <button type="button" data-lang="ca">CA</button>
+    </div>
+    <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="btn-pill" data-i="navContact">Contact</a>
+  </nav>
+  <button class="navtoggle" id="navtoggle" aria-label="Menu" aria-expanded="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="top" class="hero wrap">
+  <div class="reveal">
+    <p class="eyebrow" data-i="heroEyebrow">Nail Studio · Sabadell</p>
+    <h1><span data-i="heroL1">Your nails.</span><br><span data-i="heroL2">Your mood.</span><br><span data-i="heroL3pre">Your </span><span class="accent" data-i="heroAccent">moment.</span></h1>
+    <p class="lead" data-i="heroBody">Quietly obsessed with the details. Clean, careful work and a calm room — the kind of nail appointment you actually look forward to.</p>
+    <div class="actions">
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="cta-lg"><span data-i="book">Book your appointment</span> →</a>
+      <a href="tel:+34632672273" class="cta-ghost" data-i="callUs">Or call us</a>
+    </div>
+  </div>
+  <div>
+    <div class="slot"><img src="images/hero-hand.webp" alt="Pink floral nail art by Vietnam Nails" loading="eager" width="900" height="1200"></div>
+  </div>
+</section>
+
+<!-- ===== GALLERY STRIP ===== -->
+<section class="gallery wrap">
+  <div class="grid">
+    <div class="slot reveal"><img src="images/gallery-1.webp" alt="Dark red cat-eye gel nail set" loading="lazy" style="object-position:center 35%"></div>
+    <div class="slot reveal"><img src="images/gallery-2.webp" alt="Pink floral 3D nail art set" loading="lazy"></div>
+    <div class="slot reveal"><img src="images/gallery-3.webp" alt="Smokey grey cat-eye nail set" loading="lazy" style="object-position:center 35%"></div>
+  </div>
+</section>
+
+<!-- ===== STYLES ===== -->
+<section id="styles" class="styles">
+  <h2 data-i="stylesTitle">Styles that speak for you</h2>
+  <div class="grid">
+    <div class="card reveal">
+      <div class="slot"><img src="images/style-classic.webp" alt="Glossy chrome almond manicure" loading="lazy"></div>
+      <h3 data-i="card1Title">Classic &amp; Gel</h3>
+      <p data-i="card1Body">Clean, shaped and finished exactly how you like it. Gel polish that stays glossy for weeks.</p>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="book" data-i="book">Book your appointment</a>
+    </div>
+    <div class="card hl reveal">
+      <div class="slot"><img src="images/style-art.webp" alt="Pink and gold hand-painted nail art" loading="lazy"></div>
+      <h3 data-i="card2Title">Nail Art</h3>
+      <p data-i="card2Body">Hand-painted detail, chrome, florals and the little ideas you screenshot. We make them yours.</p>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="book" data-i="book">Book your appointment</a>
+    </div>
+    <div class="card reveal">
+      <div class="slot"><img src="images/style-ext.webp" alt="French tip acrylic extensions" loading="lazy"></div>
+      <h3 data-i="card3Title">Extensions &amp; Sculpting</h3>
+      <p data-i="card3Body">Length and shape built to suit your hands — acrylic or builder gel, strong and natural-looking.</p>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="book" data-i="book">Book your appointment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORY ===== -->
+<section id="story" class="story">
+  <div class="inner">
+    <div class="slot reveal"><img src="images/about-salon.webp" alt="Manicure in progress at the Vietnam Nails studio" loading="lazy" style="object-position:40% center"></div>
+    <div class="reveal">
+      <h2><span data-i="storyT1">We started with</span><br><span data-i="storyT2">one simple idea.</span></h2>
+      <p data-i="storyP1">Nail appointments should feel good — from the moment you walk in. Not rushed, not transactional. Actually good.</p>
+      <p data-i="storyP2">A space where you feel comfortable, with a team that listens and works in a way that makes you genuinely excited to look at your hands.</p>
+      <p data-i="storyP3">That's what we set out to create. Everything about this place was built around that feeling.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES & PRICING ===== -->
+<section id="services" class="services">
+  <div class="head">
+    <h2 data-i="servicesTitle">Services &amp; pricing</h2>
+    <p class="note" data-i="servicesNote">Prices from · final quote at consultation</p>
+  </div>
+  <div>
+    <div class="price-row"><div><div class="name" data-i="s1n">Classic manicure</div><div class="desc" data-i="s1d">Shape, cuticle care &amp; polish</div></div><div class="price">€18</div></div>
+    <div class="price-row"><div><div class="name" data-i="s2n">Gel manicure</div><div class="desc" data-i="s2d">Long-wear gel, glossy for weeks</div></div><div class="price">€25</div></div>
+    <div class="price-row"><div><div class="name" data-i="s3n">Acrylic &amp; sculpted extensions</div><div class="desc" data-i="s3d">Custom length &amp; shape</div></div><div class="price">€40</div></div>
+    <div class="price-row"><div><div class="name" data-i="s4n">Nail art</div><div class="desc" data-i="s4d">Hand-painted detail · per nail</div></div><div class="price">€3</div></div>
+    <div class="price-row"><div><div class="name" data-i="s5n">Spa pedicure</div><div class="desc" data-i="s5d">Soak, scrub, shape &amp; polish</div></div><div class="price">€30</div></div>
+    <div class="price-row"><div><div class="name" data-i="s6n">Soak-off &amp; removal</div><div class="desc" data-i="s6d">Gentle removal &amp; nail reset</div></div><div class="price">€10</div></div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews">
+  <div class="inner">
+    <h2 data-i="reviewsTitle">Loved in Sabadell</h2>
+    <div class="grid">
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i="r1">“Best nails I've had in years. So precise and they last forever. The room is calm and spotless.”</p><div class="who">— Marta R.</div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i="r2">“I bring a photo and they get it exactly right every time. Genuinely the nail art is unreal.”</p><div class="who">— Júlia P.</div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i="r3">“Friendly, never rushed, and the result is always flawless. My standing appointment now.”</p><div class="who">— Aina M.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="copy reveal">
+    <h2 data-i="ctaTitle">Your nails are more than your favorite accessory.</h2>
+    <p data-i="ctaBody">Book through Instagram and we'll find a time that works. New sets, fills, repairs and ideas welcome.</p>
+    <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="dark"><span data-i="book">Book your appointment</span> →</a>
+  </div>
+  <div class="slot"><img src="images/gallery-2.webp" alt="Pink floral nail art by Vietnam Nails" loading="lazy"></div>
+</section>
+
+<!-- ===== VISIT ===== -->
+<section id="visit" class="visit">
+  <div class="grid">
+    <div>
+      <h2 data-i="visitTitle">Visit the studio</h2>
+      <div class="block">
+        <div class="label" data-i="whereLabel">Where</div>
+        <div class="addr">Av. de la Concòrdia, 5<br>08201 Sabadell · Barcelona</div>
+        <span class="walkin" data-i="walkin">Walk-ins welcome</span>
+      </div>
+      <div class="block">
+        <div class="label" data-i="hoursLabel">Hours</div>
+        <div class="hours">
+          <span data-i="monSat">Mon – Sat</span><b>9:30 – 21:00</b>
+          <span data-i="sun">Sunday</span><b class="muted" data-i="closed">Closed</b>
+        </div>
+      </div>
+      <div class="block">
+        <div class="label" data-i="bookLabel">Book &amp; reach us</div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+          <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="ig-handle">@vietnamnails_sabadell</a>
+          <a href="tel:+34632672273" class="tel">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            632 672 273
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mapwrap reveal">
+      <iframe
+        title="Map to Vietnam Nails, Sabadell"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=2.0950%2C41.5400%2C2.1180%2C41.5520&layer=mapnik&marker=41.5463%2C2.1065"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INSTAGRAM FEED ===== -->
+<section class="igsec">
+  <div class="top">
+    <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener">
+      <svg class="igicon" viewBox="0 0 24 24" fill="none" stroke="#5e1233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      <span><span data-i="follow">Follow</span> @vietnamnails_sabadell</span>
+    </a>
+  </div>
+  <div class="feed">
+    <a class="igtile reveal" href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener"><img src="images/gallery-2.webp" alt="Pink floral nail art"><span class="ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></a>
+    <a class="igtile reveal" href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener"><img src="images/style-art.webp" alt="Pink and gold nail art"><span class="ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></a>
+    <a class="igtile reveal" href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener"><img src="images/gallery-1.webp" alt="Dark red cat-eye nails"><span class="ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></a>
+    <a class="igtile reveal" href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener"><img src="images/gallery-3.webp" alt="Smokey grey cat-eye nails"><span class="ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></a>
+    <a class="igtile reveal" href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener"><img src="images/style-classic.webp" alt="Chrome almond manicure"><span class="ov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="inner">
+    <div class="fbrand">Vietnam Nails</div>
+    <div class="links">
+      <a href="#services" data-i="navServices">Services</a>
+      <a href="#styles" data-i="navStyles">Styles</a>
+      <a href="#visit" data-i="navVisit">Visit</a>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" class="ig">Instagram</a>
+    </div>
+    <div class="copy">© 2026 Vietnam Nails · Sabadell, Barcelona</div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  en: {
+    navAbout:"About", navServices:"Services", navStyles:"Styles", navVisit:"Visit", navContact:"Contact",
+    heroEyebrow:"Nail Studio · Sabadell",
+    heroL1:"Your nails.", heroL2:"Your mood.", heroL3pre:"Your ", heroAccent:"moment.",
+    heroBody:"Quietly obsessed with the details. Clean, careful work and a calm room — the kind of nail appointment you actually look forward to.",
+    book:"Book your appointment", callUs:"Or call us",
+    stylesTitle:"Styles that speak for you",
+    card1Title:"Classic & Gel", card1Body:"Clean, shaped and finished exactly how you like it. Gel polish that stays glossy for weeks.",
+    card2Title:"Nail Art", card2Body:"Hand-painted detail, chrome, florals and the little ideas you screenshot. We make them yours.",
+    card3Title:"Extensions & Sculpting", card3Body:"Length and shape built to suit your hands — acrylic or builder gel, strong and natural-looking.",
+    storyT1:"We started with", storyT2:"one simple idea.",
+    storyP1:"Nail appointments should feel good — from the moment you walk in. Not rushed, not transactional. Actually good.",
+    storyP2:"A space where you feel comfortable, with a team that listens and works in a way that makes you genuinely excited to look at your hands.",
+    storyP3:"That's what we set out to create. Everything about this place was built around that feeling.",
+    servicesTitle:"Services & pricing", servicesNote:"Prices from · final quote at consultation",
+    s1n:"Classic manicure", s1d:"Shape, cuticle care & polish",
+    s2n:"Gel manicure", s2d:"Long-wear gel, glossy for weeks",
+    s3n:"Acrylic & sculpted extensions", s3d:"Custom length & shape",
+    s4n:"Nail art", s4d:"Hand-painted detail · per nail",
+    s5n:"Spa pedicure", s5d:"Soak, scrub, shape & polish",
+    s6n:"Soak-off & removal", s6d:"Gentle removal & nail reset",
+    reviewsTitle:"Loved in Sabadell",
+    r1:"“Best nails I've had in years. So precise and they last forever. The room is calm and spotless.”",
+    r2:"“I bring a photo and they get it exactly right every time. Genuinely the nail art is unreal.”",
+    r3:"“Friendly, never rushed, and the result is always flawless. My standing appointment now.”",
+    ctaTitle:"Your nails are more than your favorite accessory.",
+    ctaBody:"Book through Instagram and we'll find a time that works. New sets, fills, repairs and ideas welcome.",
+    visitTitle:"Visit the studio", whereLabel:"Where", walkin:"Walk-ins welcome",
+    hoursLabel:"Hours", monSat:"Mon – Sat", sun:"Sunday", closed:"Closed",
+    bookLabel:"Book & reach us", follow:"Follow"
+  },
+  es: {
+    navAbout:"Nosotras", navServices:"Servicios", navStyles:"Estilos", navVisit:"Visítanos", navContact:"Contacto",
+    heroEyebrow:"Estudio de uñas · Sabadell",
+    heroL1:"Tus uñas.", heroL2:"Tu estilo.", heroL3pre:"Tu ", heroAccent:"momento.",
+    heroBody:"Obsesionadas con los detalles. Trabajo limpio y cuidado en un espacio tranquilo: la cita de uñas que de verdad esperas con ganas.",
+    book:"Reserva tu cita", callUs:"O llámanos",
+    stylesTitle:"Estilos que hablan por ti",
+    card1Title:"Clásica y gel", card1Body:"Limadas, perfiladas y acabadas justo como te gustan. Esmalte de gel con brillo que dura semanas.",
+    card2Title:"Nail art", card2Body:"Detalles pintados a mano, cromados, flores y esas ideas que guardas en el móvil. Las hacemos tuyas.",
+    card3Title:"Extensiones y esculpido", card3Body:"Largo y forma a medida de tus manos: acrílico o gel constructor, resistente y con aspecto natural.",
+    storyT1:"Empezamos con", storyT2:"una idea simple.",
+    storyP1:"Una cita de uñas debería sentirse bien desde que entras por la puerta. Sin prisas, sin que parezca un trámite. Bien de verdad.",
+    storyP2:"Un espacio donde te sientes cómoda, con un equipo que escucha y trabaja para que te encante mirarte las manos.",
+    storyP3:"Eso es lo que quisimos crear. Todo en este lugar está pensado alrededor de esa sensación.",
+    servicesTitle:"Servicios y precios", servicesNote:"Precios desde · presupuesto final en consulta",
+    s1n:"Manicura clásica", s1d:"Forma, cutículas y esmalte",
+    s2n:"Manicura de gel", s2d:"Gel de larga duración, brillo de semanas",
+    s3n:"Extensiones de acrílico y esculpido", s3d:"Largo y forma a medida",
+    s4n:"Nail art", s4d:"Detalle pintado a mano · por uña",
+    s5n:"Pedicura spa", s5d:"Remojo, exfoliación, forma y esmalte",
+    s6n:"Retirada de esmalte", s6d:"Retirada suave y reinicio de la uña",
+    reviewsTitle:"Nos quieren en Sabadell",
+    r1:"“Las mejores uñas en años. Súper precisas y duran muchísimo. El local es tranquilo e impecable.”",
+    r2:"“Llevo una foto y la clavan siempre. De verdad, el nail art es una pasada.”",
+    r3:"“Amables, sin prisas y el resultado siempre impecable. Ya es mi cita fija.”",
+    ctaTitle:"Tus uñas son más que tu accesorio favorito.",
+    ctaBody:"Reserva por Instagram y encontramos un hueco que te vaya bien. Nuevas, rellenos, arreglos e ideas: ¡bienvenidos!",
+    visitTitle:"Visita el estudio", whereLabel:"Dónde", walkin:"Sin cita previa",
+    hoursLabel:"Horario", monSat:"Lun – Sáb", sun:"Domingo", closed:"Cerrado",
+    bookLabel:"Reserva y contacto", follow:"Síguenos en"
+  },
+  ca: {
+    navAbout:"Nosaltres", navServices:"Serveis", navStyles:"Estils", navVisit:"Visita'ns", navContact:"Contacte",
+    heroEyebrow:"Estudi d'ungles · Sabadell",
+    heroL1:"Les teves ungles.", heroL2:"El teu estil.", heroL3pre:"El teu ", heroAccent:"moment.",
+    heroBody:"Obsessionades amb els detalls. Feina neta i acurada en un espai tranquil: la cita d'ungles que esperes amb candeletes.",
+    book:"Reserva la teva cita", callUs:"O truca'ns",
+    stylesTitle:"Estils que parlen per tu",
+    card1Title:"Clàssica i gel", card1Body:"Llimades, perfilades i acabades tal com t'agraden. Esmalt de gel amb brillantor que dura setmanes.",
+    card2Title:"Nail art", card2Body:"Detalls pintats a mà, cromats, flors i aquelles idees que guardes al mòbil. Les fem teves.",
+    card3Title:"Extensions i esculpit", card3Body:"Llargada i forma a mida de les teves mans: acrílic o gel constructor, resistent i d'aspecte natural.",
+    storyT1:"Vam començar amb", storyT2:"una idea senzilla.",
+    storyP1:"Una cita d'ungles s'hauria de sentir bé des que entres per la porta. Sense presses, sense que sembli un tràmit. Bé de debò.",
+    storyP2:"Un espai on et sents còmoda, amb un equip que escolta i treballa perquè t'encanti mirar-te les mans.",
+    storyP3:"Això és el que volíem crear. Tot en aquest lloc està pensat al voltant d'aquesta sensació.",
+    servicesTitle:"Serveis i preus", servicesNote:"Preus des de · pressupost final a la consulta",
+    s1n:"Manicura clàssica", s1d:"Forma, cutícules i esmalt",
+    s2n:"Manicura de gel", s2d:"Gel de llarga durada, brillantor de setmanes",
+    s3n:"Extensions d'acrílic i esculpit", s3d:"Llargada i forma a mida",
+    s4n:"Nail art", s4d:"Detall pintat a mà · per ungla",
+    s5n:"Pedicura spa", s5d:"Remull, exfoliació, forma i esmalt",
+    s6n:"Retirada d'esmalt", s6d:"Retirada suau i reinici de l'ungla",
+    reviewsTitle:"Estimades a Sabadell",
+    r1:"“Les millors ungles en anys. Súper precises i duren moltíssim. El local és tranquil i impecable.”",
+    r2:"“Hi porto una foto i la claven sempre. De debò, el nail art és una passada.”",
+    r3:"“Amables, sense presses i el resultat sempre impecable. Ja és la meva cita fixa.”",
+    ctaTitle:"Les teves ungles són més que el teu accessori preferit.",
+    ctaBody:"Reserva per Instagram i trobem un forat que et vagi bé. Noves, reompliments, arreglaments i idees: benvingudes!",
+    visitTitle:"Visita l'estudi", whereLabel:"On", walkin:"Sense cita prèvia",
+    hoursLabel:"Horari", monSat:"Dl – Ds", sun:"Diumenge", closed:"Tancat",
+    bookLabel:"Reserva i contacte", follow:"Segueix-nos a"
+  }
+};
+
+function setLang(lang){
+  const t = T[lang] || T.en;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k = el.getAttribute('data-i');
+    if(t[k] !== undefined) el.textContent = t[k];
+  });
+  document.querySelectorAll('.langgroup button').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+  });
+  try{ localStorage.setItem('vn_lang', lang); }catch(e){}
+}
+
+document.querySelectorAll('.langgroup button').forEach(b=>{
+  b.addEventListener('click',()=> setLang(b.getAttribute('data-lang')));
+});
+
+// language: stored preference > browser > default en
+(function(){
+  let lang = 'en';
+  try{ lang = localStorage.getItem('vn_lang') || ''; }catch(e){}
+  if(!lang){
+    const nav = (navigator.language||'en').slice(0,2);
+    lang = (nav==='es'||nav==='ca') ? nav : 'en';
+  }
+  setLang(lang);
+})();
+
+// mobile nav
+const navEl = document.getElementById('nav');
+const toggle = document.getElementById('navtoggle');
+toggle.addEventListener('click',()=>{
+  const open = navEl.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+navEl.querySelectorAll('a').forEach(a=> a.addEventListener('click',()=>{
+  navEl.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
+}));
+
+// reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+</script>
+</body>
+</html>
