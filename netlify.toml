@@ -1,0 +1,17 @@
+# Netlify deploy config for the Vietnam Nails landing page.
+# Static site, no build step — just publish the site/ folder.
+
+[build]
+  publish = "vietnam-nails-landing-page/site"
+  command = ""
+
+# Long-cache the images (content-hashed by filename); revalidate HTML.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
