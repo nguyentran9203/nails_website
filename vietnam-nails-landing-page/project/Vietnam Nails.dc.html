@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#efe9e2;}
+  image-slot{display:block;}
+  @keyframes vnRise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</helmet>
+
+<div style="font-family:'Archivo',sans-serif;background:#efe9e2;color:#4a1f33;-webkit-font-smoothing:antialiased;overflow-x:hidden;">
+
+  <!-- ===== HEADER ===== -->
+  <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px clamp(20px,5vw,64px);background:rgba(239,233,226,0.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(94,18,51,0.08);">
+    <a href="#top" style="font-weight:800;font-size:22px;letter-spacing:-0.02em;color:#5e1233;text-decoration:none;white-space:nowrap;">Vietnam&nbsp;Nails</a>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,2.4vw,34px);">
+      <a href="#story" style="font-size:14px;font-weight:600;color:#5e1233;text-decoration:none;opacity:0.85;">{{ navAbout }}</a>
+      <a href="#services" style="font-size:14px;font-weight:600;color:#5e1233;text-decoration:none;opacity:0.85;">{{ navServices }}</a>
+      <a href="#styles" style="font-size:14px;font-weight:600;color:#5e1233;text-decoration:none;opacity:0.85;">{{ navStyles }}</a>
+      <a href="#visit" style="font-size:14px;font-weight:600;color:#5e1233;text-decoration:none;opacity:0.85;">{{ navVisit }}</a>
+      <div role="group" aria-label="Language" style="display:flex;align-items:center;gap:2px;background:rgba(94,18,51,0.07);border-radius:999px;padding:3px;">
+        <sc-if value="{{ enOn }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ setEn }}" style="appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:0.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:#f2afce;opacity:1;">EN</button></sc-if>
+        <sc-if value="{{ enOff }}"><button type="button" onClick="{{ setEn }}" style="appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:0.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:transparent;opacity:0.5;">EN</button></sc-if>
+        <sc-if value="{{ esOn }}"><button type="button" onClick="{{ setEs }}" style="appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:0.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:#f2afce;opacity:1;">ES</button></sc-if>
+        <sc-if value="{{ esOff }}"><button type="button" onClick="{{ setEs }}" style="appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:0.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:transparent;opacity:0.5;">ES</button></sc-if>
+        <sc-if value="{{ caOn }}"><button type="button" onClick="{{ setCa }}" style="appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:0.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:#f2afce;opacity:1;">CA</button></sc-if>
+        <sc-if value="{{ caOff }}"><button type="button" onClick="{{ setCa }}" style="appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;letter-spacing:0.04em;min-width:36px;padding:7px 11px;border-radius:999px;color:#5e1233;background:transparent;opacity:0.5;">CA</button></sc-if>
+      </div>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;background:#f2afce;color:#5e1233;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:11px 22px;border-radius:999px;text-decoration:none;white-space:nowrap;">{{ navContact }}</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="top" data-screen-label="Hero" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(40px,6vw,90px) clamp(20px,5vw,64px) clamp(28px,4vw,56px);max-width:1440px;margin:0 auto;">
+    <div>
+      <p style="margin:0 0 22px;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#a8467a;">{{ heroEyebrow }}</p>
+      <h1 style="margin:0;font-size:clamp(46px,6.4vw,92px);line-height:0.98;font-weight:800;letter-spacing:-0.03em;color:#5e1233;text-wrap:balance;">{{ heroL1 }}<br>{{ heroL2 }}<br>{{ heroL3pre }}<span style="color:#d96aa0;">{{ heroAccent }}</span></h1>
+      <p style="margin:30px 0 36px;max-width:430px;font-size:17px;line-height:1.55;color:rgba(74,31,51,0.78);">{{ heroBody }}</p>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#f2afce;color:#5e1233;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:16px 30px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(242,175,206,0.5);">{{ book }} →</a>
+    </div>
+    <div>
+      <image-slot id="hero-hand" shape="rounded" radius="18" style="width:100%;height:clamp(360px,46vw,580px);" placeholder="Drop your hero hand photo"></image-slot>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY STRIP ===== -->
+  <section data-screen-label="Gallery strip" style="padding:0 clamp(20px,5vw,64px) clamp(40px,6vw,80px);max-width:1440px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <image-slot id="gallery-1" shape="rounded" radius="14" style="width:100%;height:clamp(220px,26vw,360px);" placeholder="Dark gel set"></image-slot>
+      <image-slot id="gallery-2" shape="rounded" radius="14" style="width:100%;height:clamp(220px,26vw,360px);" placeholder="Nail art set"></image-slot>
+      <image-slot id="gallery-3" shape="rounded" radius="14" style="width:100%;height:clamp(220px,26vw,360px);" placeholder="French / soft set"></image-slot>
+    </div>
+  </section>
+
+  <!-- ===== STYLES ===== -->
+  <section id="styles" data-screen-label="Styles" style="padding:clamp(48px,6vw,90px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;">
+    <h2 style="text-align:center;margin:0 0 clamp(36px,4vw,56px);font-size:clamp(34px,4.6vw,58px);font-weight:800;letter-spacing:-0.025em;color:#5e1233;">{{ stylesTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);">
+
+      <!-- card 1 -->
+      <div style="background:#e7e0d7;border-radius:18px;padding:16px;display:flex;flex-direction:column;">
+        <image-slot id="style-classic" shape="rounded" radius="12" style="width:100%;height:clamp(220px,24vw,300px);" placeholder="Classic / gel"></image-slot>
+        <h3 style="margin:20px 4px 8px;font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#5e1233;">{{ card1Title }}</h3>
+        <p style="margin:0 4px 22px;font-size:14px;line-height:1.5;color:rgba(74,31,51,0.7);flex:1;">{{ card1Body }}</p>
+        <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="display:block;text-align:center;background:#f2afce;color:#5e1233;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:13px;border-radius:999px;text-decoration:none;">{{ book }}</a>
+      </div>
+
+      <!-- card 2 highlighted -->
+      <div style="background:#8c1f4d;border-radius:18px;padding:16px;display:flex;flex-direction:column;box-shadow:0 20px 40px rgba(140,31,77,0.28);">
+        <image-slot id="style-art" shape="rounded" radius="12" style="width:100%;height:clamp(220px,24vw,300px);" placeholder="Nail art"></image-slot>
+        <h3 style="margin:20px 4px 8px;font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#fff;">{{ card2Title }}</h3>
+        <p style="margin:0 4px 22px;font-size:14px;line-height:1.5;color:rgba(255,255,255,0.82);flex:1;">{{ card2Body }}</p>
+        <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="display:block;text-align:center;background:#f2afce;color:#5e1233;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:13px;border-radius:999px;text-decoration:none;">{{ book }}</a>
+      </div>
+
+      <!-- card 3 -->
+      <div style="background:#e7e0d7;border-radius:18px;padding:16px;display:flex;flex-direction:column;">
+        <image-slot id="style-ext" shape="rounded" radius="12" style="width:100%;height:clamp(220px,24vw,300px);" placeholder="Extensions"></image-slot>
+        <h3 style="margin:20px 4px 8px;font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#5e1233;">{{ card3Title }}</h3>
+        <p style="margin:0 4px 22px;font-size:14px;line-height:1.5;color:rgba(74,31,51,0.7);flex:1;">{{ card3Body }}</p>
+        <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="display:block;text-align:center;background:#f2afce;color:#5e1233;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:13px;border-radius:999px;text-decoration:none;">{{ book }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section id="story" data-screen-label="Story" style="background:#e7e0d7;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);max-width:1320px;margin:0 auto;">
+      <image-slot id="about-salon" shape="rounded" radius="16" style="width:100%;height:clamp(320px,38vw,500px);" placeholder="Drop a photo of the salon interior"></image-slot>
+      <div>
+        <h2 style="margin:0 0 28px;font-size:clamp(32px,4.2vw,54px);line-height:1.02;font-weight:800;letter-spacing:-0.025em;color:#5e1233;">{{ storyT1 }}<br>{{ storyT2 }}</h2>
+        <p style="margin:0 0 18px;font-size:16px;line-height:1.6;color:rgba(74,31,51,0.8);max-width:460px;">{{ storyP1 }}</p>
+        <p style="margin:0 0 18px;font-size:16px;line-height:1.6;color:rgba(74,31,51,0.8);max-width:460px;">{{ storyP2 }}</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(74,31,51,0.8);max-width:460px;">{{ storyP3 }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES & PRICING ===== -->
+  <section id="services" data-screen-label="Services" style="padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);max-width:1040px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:clamp(28px,3vw,44px);">
+      <h2 style="margin:0;font-size:clamp(32px,4.2vw,54px);font-weight:800;letter-spacing:-0.025em;color:#5e1233;">{{ servicesTitle }}</h2>
+      <p style="margin:0;font-size:14px;color:rgba(74,31,51,0.6);">{{ servicesNote }}</p>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,0.14);">
+        <div><div style="font-size:19px;font-weight:700;color:#5e1233;">{{ s1n }}</div><div style="font-size:14px;color:rgba(74,31,51,0.6);margin-top:3px;">{{ s1d }}</div></div>
+        <div style="font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;">€18</div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,0.14);">
+        <div><div style="font-size:19px;font-weight:700;color:#5e1233;">{{ s2n }}</div><div style="font-size:14px;color:rgba(74,31,51,0.6);margin-top:3px;">{{ s2d }}</div></div>
+        <div style="font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;">€25</div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,0.14);">
+        <div><div style="font-size:19px;font-weight:700;color:#5e1233;">{{ s3n }}</div><div style="font-size:14px;color:rgba(74,31,51,0.6);margin-top:3px;">{{ s3d }}</div></div>
+        <div style="font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;">€40</div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,0.14);">
+        <div><div style="font-size:19px;font-weight:700;color:#5e1233;">{{ s4n }}</div><div style="font-size:14px;color:rgba(74,31,51,0.6);margin-top:3px;">{{ s4d }}</div></div>
+        <div style="font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;">€3</div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,0.14);">
+        <div><div style="font-size:19px;font-weight:700;color:#5e1233;">{{ s5n }}</div><div style="font-size:14px;color:rgba(74,31,51,0.6);margin-top:3px;">{{ s5d }}</div></div>
+        <div style="font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;">€30</div>
+      </div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid rgba(94,18,51,0.14);border-bottom:1px solid rgba(94,18,51,0.14);">
+        <div><div style="font-size:19px;font-weight:700;color:#5e1233;">{{ s6n }}</div><div style="font-size:14px;color:rgba(74,31,51,0.6);margin-top:3px;">{{ s6d }}</div></div>
+        <div style="font-size:19px;font-weight:800;color:#5e1233;white-space:nowrap;">€10</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section data-screen-label="Reviews" style="background:#5e1233;color:#fff;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <h2 style="margin:0 0 clamp(32px,4vw,52px);font-size:clamp(30px,3.8vw,48px);font-weight:800;letter-spacing:-0.025em;color:#fff;text-align:center;">{{ reviewsTitle }}</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);">
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:28px;">
+          <div style="color:#f2afce;font-size:15px;letter-spacing:2px;margin-bottom:14px;">★★★★★</div>
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.92);">{{ r1 }}</p>
+          <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:#f2afce;">— Marta R.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:28px;">
+          <div style="color:#f2afce;font-size:15px;letter-spacing:2px;margin-bottom:14px;">★★★★★</div>
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.92);">{{ r2 }}</p>
+          <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:#f2afce;">— Júlia P.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:28px;">
+          <div style="color:#f2afce;font-size:15px;letter-spacing:2px;margin-bottom:14px;">★★★★★</div>
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.92);">{{ r3 }}</p>
+          <div style="font-size:13px;font-weight:700;letter-spacing:0.04em;color:#f2afce;">— Aina M.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section data-screen-label="Booking CTA" style="display:grid;grid-template-columns:1.1fr 0.9fr;align-items:stretch;background:linear-gradient(135deg,#f2afce 0%,#ec8fbb 100%);">
+    <div style="padding:clamp(48px,6vw,110px) clamp(24px,5vw,72px);display:flex;flex-direction:column;justify-content:center;">
+      <h2 style="margin:0 0 28px;font-size:clamp(34px,4.6vw,62px);line-height:1.0;font-weight:800;letter-spacing:-0.03em;color:#5e1233;text-wrap:balance;">{{ ctaTitle }}</h2>
+      <p style="margin:0 0 34px;max-width:440px;font-size:17px;line-height:1.55;color:rgba(94,18,51,0.78);">{{ ctaBody }}</p>
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#5e1233;color:#fff;font-size:13px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:16px 32px;border-radius:999px;text-decoration:none;">{{ book }} →</a>
+    </div>
+    <image-slot id="cta-face" shape="rect" style="width:100%;height:100%;min-height:340px;" placeholder="Drop a portrait / beauty photo"></image-slot>
+  </section>
+
+  <!-- ===== VISIT ===== -->
+  <section id="visit" data-screen-label="Visit" style="padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px);max-width:1240px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;">
+      <div>
+        <h2 style="margin:0 0 28px;font-size:clamp(30px,3.8vw,48px);font-weight:800;letter-spacing:-0.025em;color:#5e1233;">{{ visitTitle }}</h2>
+        <div style="margin-bottom:24px;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#a8467a;margin-bottom:8px;">{{ whereLabel }}</div>
+          <div style="font-size:17px;line-height:1.5;color:#4a1f33;">{{ addr1 }}<br>08201 Sabadell · Barcelona</div>
+        </div>
+        <div style="margin-bottom:24px;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#a8467a;margin-bottom:8px;">{{ hoursLabel }}</div>
+          <div style="display:grid;grid-template-columns:auto auto;gap:4px 28px;font-size:16px;color:#4a1f33;width:max-content;">
+            <span>{{ monFri }}</span><span style="font-weight:700;">9:30 – 20:00</span>
+            <span>{{ sat }}</span><span style="font-weight:700;">9:30 – 18:00</span>
+            <span>{{ sun }}</span><span style="font-weight:700;opacity:0.6;">{{ closed }}</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#a8467a;margin-bottom:8px;">{{ bookLabel }}</div>
+          <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="font-size:17px;color:#5e1233;font-weight:700;text-decoration:none;border-bottom:2px solid #f2afce;">@vietnamnails_sabadell</a>
+        </div>
+      </div>
+      <image-slot id="visit-map" shape="rounded" radius="16" style="width:100%;height:clamp(300px,32vw,440px);" placeholder="Drop a map screenshot or storefront photo"></image-slot>
+    </div>
+  </section>
+
+  <!-- ===== INSTAGRAM STRIP ===== -->
+  <section data-screen-label="Instagram" style="padding:0 0 clamp(20px,3vw,40px);">
+    <div style="text-align:center;padding:0 20px clamp(24px,3vw,40px);">
+      <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="font-size:clamp(22px,2.6vw,32px);font-weight:800;letter-spacing:-0.02em;color:#5e1233;text-decoration:none;">{{ follow }} @vietnamnails_sabadell</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;">
+      <image-slot id="ig-1" shape="rect" style="width:100%;aspect-ratio:1/1;" placeholder="IG"></image-slot>
+      <image-slot id="ig-2" shape="rect" style="width:100%;aspect-ratio:1/1;" placeholder="IG"></image-slot>
+      <image-slot id="ig-3" shape="rect" style="width:100%;aspect-ratio:1/1;" placeholder="IG"></image-slot>
+      <image-slot id="ig-4" shape="rect" style="width:100%;aspect-ratio:1/1;" placeholder="IG"></image-slot>
+      <image-slot id="ig-5" shape="rect" style="width:100%;aspect-ratio:1/1;" placeholder="IG"></image-slot>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#5e1233;color:rgba(255,255,255,0.78);padding:clamp(40px,5vw,64px) clamp(20px,5vw,64px);">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;">
+      <div style="font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#fff;">Vietnam Nails</div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;">
+        <a href="#services" style="color:rgba(255,255,255,0.78);text-decoration:none;">{{ navServices }}</a>
+        <a href="#styles" style="color:rgba(255,255,255,0.78);text-decoration:none;">{{ navStyles }}</a>
+        <a href="#visit" style="color:rgba(255,255,255,0.78);text-decoration:none;">{{ navVisit }}</a>
+        <a href="https://www.instagram.com/vietnamnails_sabadell/" target="_blank" rel="noopener" style="color:#f2afce;text-decoration:none;font-weight:700;">Instagram</a>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.5);width:100%;text-align:center;padding-top:8px;">© 2026 Vietnam Nails · Sabadell, Barcelona</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;English&quot;,&quot;Español&quot;,&quot;Català&quot;],&quot;default&quot;:&quot;English&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null };
+  renderVals() {
+    const T = {
+      English: {
+        navAbout: "About", navServices: "Services", navStyles: "Styles", navVisit: "Visit", navContact: "Contact",
+        heroEyebrow: "Nail Studio · Sabadell",
+        heroL1: "Your nails.", heroL2: "Your mood.", heroL3pre: "Your ", heroAccent: "moment.",
+        heroBody: "Quietly obsessed with the details. Clean, careful work and a calm room — the kind of nail appointment you actually look forward to.",
+        book: "Book your appointment",
+        stylesTitle: "Styles that speak for you",
+        card1Title: "Classic & Gel", card1Body: "Clean, shaped and finished exactly how you like it. Gel polish that stays glossy for weeks.",
+        card2Title: "Nail Art", card2Body: "Hand-painted detail, chrome, florals and the little ideas you screenshot. We make them yours.",
+        card3Title: "Extensions & Sculpting", card3Body: "Length and shape built to suit your hands — acrylic or builder gel, strong and natural-looking.",
+        storyT1: "We started with", storyT2: "one simple idea.",
+        storyP1: "Nail appointments should feel good — from the moment you walk in. Not rushed, not transactional. Actually good.",
+        storyP2: "A space where you feel comfortable, with a team that listens and works in a way that makes you genuinely excited to look at your hands.",
+        storyP3: "That's what we set out to create. Everything about this place was built around that feeling.",
+        servicesTitle: "Services & pricing", servicesNote: "Prices from · final quote at consultation",
+        s1n: "Classic manicure", s1d: "Shape, cuticle care & polish",
+        s2n: "Gel manicure", s2d: "Long-wear gel, glossy for weeks",
+        s3n: "Acrylic & sculpted extensions", s3d: "Custom length & shape",
+        s4n: "Nail art", s4d: "Hand-painted detail · per nail",
+        s5n: "Spa pedicure", s5d: "Soak, scrub, shape & polish",
+        s6n: "Soak-off & removal", s6d: "Gentle removal & nail reset",
+        reviewsTitle: "Loved in Sabadell",
+        r1: "\u201CBest nails I've had in years. So precise and they last forever. The room is calm and spotless.\u201D",
+        r2: "\u201CI bring a photo and they get it exactly right every time. Genuinely the nail art is unreal.\u201D",
+        r3: "\u201CFriendly, never rushed, and the result is always flawless. My standing appointment now.\u201D",
+        ctaTitle: "Your nails are more than your favorite accessory.",
+        ctaBody: "Book through Instagram and we'll find a time that works. New sets, fills, repairs and ideas welcome.",
+        visitTitle: "Visit the studio", whereLabel: "Where", addr1: "[ Your street address ]",
+        hoursLabel: "Hours", monFri: "Mon – Fri", sat: "Saturday", sun: "Sunday", closed: "Closed",
+        bookLabel: "Book & reach us", follow: "Follow"
+      },
+      "Español": {
+        navAbout: "Nosotras", navServices: "Servicios", navStyles: "Estilos", navVisit: "Visítanos", navContact: "Contacto",
+        heroEyebrow: "Estudio de uñas · Sabadell",
+        heroL1: "Tus uñas.", heroL2: "Tu estilo.", heroL3pre: "Tu ", heroAccent: "momento.",
+        heroBody: "Obsesionadas con los detalles. Trabajo limpio y cuidado en un espacio tranquilo: la cita de uñas que de verdad esperas con ganas.",
+        book: "Reserva tu cita",
+        stylesTitle: "Estilos que hablan por ti",
+        card1Title: "Clásica y gel", card1Body: "Limadas, perfiladas y acabadas justo como te gustan. Esmalte de gel con brillo que dura semanas.",
+        card2Title: "Nail art", card2Body: "Detalles pintados a mano, cromados, flores y esas ideas que guardas en el móvil. Las hacemos tuyas.",
+        card3Title: "Extensiones y esculpido", card3Body: "Largo y forma a medida de tus manos: acrílico o gel constructor, resistente y con aspecto natural.",
+        storyT1: "Empezamos con", storyT2: "una idea simple.",
+        storyP1: "Una cita de uñas debería sentirse bien desde que entras por la puerta. Sin prisas, sin que parezca un trámite. Bien de verdad.",
+        storyP2: "Un espacio donde te sientes cómoda, con un equipo que escucha y trabaja para que te encante mirarte las manos.",
+        storyP3: "Eso es lo que quisimos crear. Todo en este lugar está pensado alrededor de esa sensación.",
+        servicesTitle: "Servicios y precios", servicesNote: "Precios desde · presupuesto final en consulta",
+        s1n: "Manicura clásica", s1d: "Forma, cutículas y esmalte",
+        s2n: "Manicura de gel", s2d: "Gel de larga duración, brillo de semanas",
+        s3n: "Extensiones de acrílico y esculpido", s3d: "Largo y forma a medida",
+        s4n: "Nail art", s4d: "Detalle pintado a mano · por uña",
+        s5n: "Pedicura spa", s5d: "Remojo, exfoliación, forma y esmalte",
+        s6n: "Retirada de esmalte", s6d: "Retirada suave y reinicio de la uña",
+        reviewsTitle: "Nos quieren en Sabadell",
+        r1: "\u201CLas mejores uñas en años. Súper precisas y duran muchísimo. El local es tranquilo e impecable.\u201D",
+        r2: "\u201CLlevo una foto y la clavan siempre. De verdad, el nail art es una pasada.\u201D",
+        r3: "\u201CAmables, sin prisas y el resultado siempre impecable. Ya es mi cita fija.\u201D",
+        ctaTitle: "Tus uñas son más que tu accesorio favorito.",
+        ctaBody: "Reserva por Instagram y encontramos un hueco que te vaya bien. Nuevas, rellenos, arreglos e ideas: ¡bienvenidos!",
+        visitTitle: "Visita el estudio", whereLabel: "Dónde", addr1: "[ Tu dirección ]",
+        hoursLabel: "Horario", monFri: "Lun – Vie", sat: "Sábado", sun: "Domingo", closed: "Cerrado",
+        bookLabel: "Reserva y contacto", follow: "Síguenos en"
+      },
+      "Català": {
+        navAbout: "Nosaltres", navServices: "Serveis", navStyles: "Estils", navVisit: "Visita'ns", navContact: "Contacte",
+        heroEyebrow: "Estudi d'ungles · Sabadell",
+        heroL1: "Les teves ungles.", heroL2: "El teu estil.", heroL3pre: "El teu ", heroAccent: "moment.",
+        heroBody: "Obsessionades amb els detalls. Feina neta i acurada en un espai tranquil: la cita d'ungles que esperes amb candeletes.",
+        book: "Reserva la teva cita",
+        stylesTitle: "Estils que parlen per tu",
+        card1Title: "Clàssica i gel", card1Body: "Llimades, perfilades i acabades tal com t'agraden. Esmalt de gel amb brillantor que dura setmanes.",
+        card2Title: "Nail art", card2Body: "Detalls pintats a mà, cromats, flors i aquelles idees que guardes al mòbil. Les fem teves.",
+        card3Title: "Extensions i esculpit", card3Body: "Llargada i forma a mida de les teves mans: acrílic o gel constructor, resistent i d'aspecte natural.",
+        storyT1: "Vam començar amb", storyT2: "una idea senzilla.",
+        storyP1: "Una cita d'ungles s'hauria de sentir bé des que entres per la porta. Sense presses, sense que sembli un tràmit. Bé de debò.",
+        storyP2: "Un espai on et sents còmoda, amb un equip que escolta i treballa perquè t'encanti mirar-te les mans.",
+        storyP3: "Això és el que volíem crear. Tot en aquest lloc està pensat al voltant d'aquesta sensació.",
+        servicesTitle: "Serveis i preus", servicesNote: "Preus des de · pressupost final a la consulta",
+        s1n: "Manicura clàssica", s1d: "Forma, cutícules i esmalt",
+        s2n: "Manicura de gel", s2d: "Gel de llarga durada, brillantor de setmanes",
+        s3n: "Extensions d'acrílic i esculpit", s3d: "Llargada i forma a mida",
+        s4n: "Nail art", s4d: "Detall pintat a mà · per ungla",
+        s5n: "Pedicura spa", s5d: "Remull, exfoliació, forma i esmalt",
+        s6n: "Retirada d'esmalt", s6d: "Retirada suau i reinici de l'ungla",
+        reviewsTitle: "Estimades a Sabadell",
+        r1: "\u201CLes millors ungles en anys. Súper precises i duren moltíssim. El local és tranquil i impecable.\u201D",
+        r2: "\u201CHi porto una foto i la claven sempre. De debò, el nail art és una passada.\u201D",
+        r3: "\u201CAmables, sense presses i el resultat sempre impecable. Ja és la meva cita fixa.\u201D",
+        ctaTitle: "Les teves ungles són més que el teu accessori preferit.",
+        ctaBody: "Reserva per Instagram i trobem un forat que et vagi bé. Noves, reompliments, arreglaments i idees: benvingudes!",
+        visitTitle: "Visita l'estudi", whereLabel: "On", addr1: "[ La teva adreça ]",
+        hoursLabel: "Horari", monFri: "Dl – Dv", sat: "Dissabte", sun: "Diumenge", closed: "Tancat",
+        bookLabel: "Reserva i contacte", follow: "Segueix-nos a"
+      }
+    };
+    const lang = this.state.lang || this.props.lang || "English";
+    const t = T[lang] || T.English;
+    return Object.assign({
+      lang,
+      setEn: () => this.setState({ lang: "English" }),
+      setEs: () => this.setState({ lang: "Español" }),
+      setCa: () => this.setState({ lang: "Català" }),
+      enOn: lang === "English", enOff: lang !== "English",
+      esOn: lang === "Español", esOff: lang !== "Español",
+      caOn: lang === "Català", caOff: lang !== "Català"
+    }, t);
+  }
+}
+</script>
+</body>
+</html>
